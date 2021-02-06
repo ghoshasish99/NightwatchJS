@@ -19,7 +19,11 @@ module.exports = {
   // See https://nightwatchjs.org/guide/#external-globals
   globals_path : '',
 
-  webdriver: {},
+  webdriver: {
+    "start_process": true,
+    "server_path": require('chromedriver').path,
+    "port": 9515
+  },
 
   test_settings: {
     default: {
@@ -38,7 +42,7 @@ module.exports = {
 
       webdriver: {
         start_process: true,
-        server_path: (Services.geckodriver ? Services.geckodriver.path : '')
+        server_path : require('chromedriver').path
       }
     },
 
