@@ -16,7 +16,7 @@ steps:
 
 - script: |
     npm test
-  displayName: 'Run WebdriverIO Tests'
+  displayName: 'Run NightwatchJS Tests'
 
 - task: PublishTestResults@2
   inputs:
