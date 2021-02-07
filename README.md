@@ -16,7 +16,7 @@ Make the following changes in the `nightwatch.conf.js` file before executing you
 test_settings: {
     default: {
       disable_error_log: false,
-      launch_url: 'https://nightwatchjs.org',
+      launch_url: '',
 
       screenshots: {
         enabled: false,

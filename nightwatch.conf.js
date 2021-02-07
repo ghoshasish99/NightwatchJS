@@ -5,10 +5,10 @@ const Services = {}; loadServices();
 module.exports = {
   // An array of folders (excluding subfolders) where your tests are located;
   // if this is not specified, the test source must be passed as the second argument to the test runner.
-  src_folders: [],
+  src_folders: ['specs'],
 
   // See https://nightwatchjs.org/guide/working-with-page-objects/
-  page_objects_path: '',
+  page_objects_path: 'pageobjects',
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-commands
   custom_commands_path:  '',
@@ -25,6 +25,13 @@ module.exports = {
     "port": 9515
   },
 
+  // test_runner : { 
+  //   "type" : "mocha", 
+  //   "options" : {
+  //     "ui" : "tdd"
+  //   }
+  // },
+
   test_settings: {
     default: {
       disable_error_log: false,
@@ -37,7 +44,10 @@ module.exports = {
       },
 
       desiredCapabilities: {
-        browserName : 'chrome'
+        browserName : 'chrome',
+        chromeOptions : {
+          "args" : ["headless"]
+       }
       },
 
       webdriver: {
@@ -84,7 +94,7 @@ module.exports = {
             //'--no-sandbox',
             //'--ignore-certificate-errors',
             //'--allow-insecure-localhost',
-            //'--headless'
+            '--headless'
           ]
         }
       },
